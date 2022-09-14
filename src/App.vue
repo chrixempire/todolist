@@ -1,26 +1,52 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+ <headerLayout/>
+ <todoList v-for="todo in todos" :key="todo.id"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import headerLayout from './components/layout/headerLayout'
+import todoList from './components/todoList'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+   headerLayout,
+   todoList,
+  },
+  data(){
+    return{
+      todos : [
+        {
+        id : 1,
+        title : "Create a Todo-list with Vue Js",
+        completed: false
+      },
+      {
+        id : 2,
+        title : "Work on My Technical Report",
+        completed: true
+      },
+      {
+        id : 3,
+        title : "Research on my Project topics",
+        completed: false
+      },
+      {
+        id : 4,
+        title : "Perfect on my Javascript Skills",
+        completed: false
+      }
+    ]
+    }
+  
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 </style>
