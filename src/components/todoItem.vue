@@ -1,5 +1,5 @@
 <template>
-    <div class="Todo" :class="{'iscompleted':todo.completed}">
+       <div class="Todo" :class="{'iscompleted':todo.completed}">
         <p>
         <input type="checkbox" @click="markcomplete">
         {{todo.title}}
@@ -13,14 +13,7 @@
 <script>
 export default {
     name: "todoItem",
-    props:['todo'],
-    methods:{
-        markcomplete(){
-           console.log("i am working");
-           this.todo.completed = !this.todo.completed
-        }
-      
-    }
+    props:["todo"]
 }
 </script>
 
@@ -31,7 +24,7 @@ export default {
 .Todo{
     background: grey;
     padding: 10px;
-    border-bottom: 1px dotted black;
+    /* border-bottom: 1px dotted black; */
 }
 .Todo p{
     padding: 20px;
