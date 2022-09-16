@@ -1,17 +1,20 @@
 <template>
  <headerLayout/>
- <todoList v-for="todo in todos" :key="todo.id"/>
+ <addTodos/>
+ <todoList v-bind:todos="todos" />
 </template>
 
 <script>
 
 import headerLayout from './components/layout/headerLayout'
 import todoList from './components/todoList'
+import addTodos from './components/addTodos'
 export default {
   name: 'App',
   components: {
    headerLayout,
    todoList,
+   addTodos,
   },
   data(){
     return{
@@ -49,4 +52,5 @@ export default {
   padding: 0px;
   box-sizing: border-box;
 }
+
 </style>
