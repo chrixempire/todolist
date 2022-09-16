@@ -1,6 +1,6 @@
 <template>
     <div class="Todo" v-for="todo in todos" :key="todo.id" :class="{'iscompleted':todo.completed}" >
-       <p :class="{'isco >
+       <p>
         <input type="checkbox" @click="markcomplete">
         {{todo.title}}
         <button>
