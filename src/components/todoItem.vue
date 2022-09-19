@@ -1,9 +1,9 @@
 <template>
-       <div class="Todo" :class="{'iscompleted':todo.completed}">
+       <div class="Todo" :class="{'iscompleted': completed}">
         <p>
-        <input type="checkbox" @click="markcomplete">
+        <input type="checkbox" @change="markedComplete">
         {{todo.title}}
-        <button >
+        <button @click="$emit('del-todo', todo.id)" class="del">
             X
         </button>
        </p>
@@ -13,7 +13,18 @@
 <script>
 export default {
     name: "todoItem",
-    props:["todo"]
+    props:[ "todo"],
+    data(){
+        return{
+            completed : this.todo.completed
+        }
+    },
+    methods:{
+        markedComplete(){
+            console.log('i am working')
+           this.completed = !this.completed
+        }
+    }
 }
 </script>
 
@@ -24,11 +35,11 @@ export default {
 .Todo{
     background: grey;
     padding: 10px;
-    /* border-bottom: 1px dotted black; */
+    border-bottom: 1px dotted black;
 }
 .Todo p{
     padding: 20px;
-    font-size: 30px;
+    font-size: 20px;
     color: black;
    
 }
@@ -48,7 +59,8 @@ input[type='checkbox']{
     outline: none;
     color: white;
     font-size: 25px;
-    float: right;
+    float:right;
+    margin-bottom: 30px;
     cursor: pointer;
 }
 </style>
