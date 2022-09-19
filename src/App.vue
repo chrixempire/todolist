@@ -1,11 +1,20 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <headerLayout/>
   </nav>
   <router-view/>
 </template>
+<script>
+   import headerLayout from './components/layout/headerLayout'
 
+export default {
+  name: "App",
+  components: {
+    headerLayout,
+    
+}
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

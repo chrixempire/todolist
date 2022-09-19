@@ -1,12 +1,14 @@
 <template>
        <div class="Todo" :class="{'iscompleted': completed}">
-        <p>
+        <div class="container">
+        <div class="size">
         <input type="checkbox" @change="markedComplete">
         {{todo.title}}
+        </div>
         <button @click="$emit('del-todo', todo.id)" class="del">
             X
         </button>
-       </p>
+    </div>
     </div>
 </template>
 
@@ -37,10 +39,12 @@ export default {
     padding: 10px;
     border-bottom: 1px dotted black;
 }
-.Todo p{
-    padding: 20px;
+.container{
     font-size: 20px;
     color: black;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
    
 }
 input[type='checkbox']{
@@ -48,8 +52,8 @@ input[type='checkbox']{
     height: 20px;
 }
 .Todo button{
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background: red;
     display: flex;
@@ -58,9 +62,7 @@ input[type='checkbox']{
     border: none;
     outline: none;
     color: white;
-    font-size: 25px;
-    float:right;
-    margin-bottom: 30px;
+    font-size: 15px;
     cursor: pointer;
 }
 </style>

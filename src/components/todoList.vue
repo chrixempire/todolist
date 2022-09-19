@@ -18,7 +18,5 @@ props:["todos"],
 </script>
 
 <style scoped>
-div{
-    background-color: red;
-}
+
 </style>
