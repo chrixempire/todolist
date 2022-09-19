@@ -1,7 +1,9 @@
 <template>
-  <addTodos @add-todo="addTodo"/>
+  <div class="cont">
+    <addTodos @add-todo="addTodo"/>
   <todoList v-bind:todos="todos" @del-todo= "delTodo" />
   <p class="warn" v-show="this.todos.length === 0">Pleasee add a Todo to make up a todo list.</p>
+  </div>
  </template>
  
  <script>
@@ -66,7 +68,7 @@
  
   },
   created(){
-   axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+   axios.get('https://jsonplaceholder.typicode.com/todos?_limit=4')
    .then(res => this.todos = res.data )
    .catch(err => console.log(err))
   }
@@ -86,6 +88,9 @@
    font-size: 15px;
    font-weight: 600;
   text-align: center;
+ }
+ .cont{
+  padding: 10px;
  }
  
  </style>

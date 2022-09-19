@@ -64,5 +64,22 @@ input[type='checkbox']{
     color: white;
     font-size: 15px;
     cursor: pointer;
+    
+}
+.size{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+@media screen and (max-width: 600px) {
+    .container{
+    font-size: 15px;
+    color: black;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+   
+}   
 }
 </style>

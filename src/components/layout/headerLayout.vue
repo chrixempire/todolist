@@ -19,9 +19,9 @@ export default {
 .header{
     background: rgb(78, 57, 57);
     color: white;
-    padding: 5px;
     width: 100%;
     text-align: center;
+
   
 }
 .header h1{
