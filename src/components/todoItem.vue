@@ -1,9 +1,10 @@
 <template>
        <div class="Todo" :class="{'iscompleted': completed}">
         <div class="container">
+            <input type="checkbox" @change="markedComplete">
         <div class="size">
-        <input type="checkbox" @change="markedComplete">
-        {{todo.title}}
+       
+       <div class="todoTitle">{{todo.title}}</div> 
         </div>
         <button @click="$emit('del-todo', todo.id)" class="del">
             X
@@ -33,11 +34,14 @@ export default {
 <style scoped>
 .iscompleted{
     text-decoration: line-through;
+    color: red;
+    border: 3px solid red;
 }
 .Todo{
-    background: grey;
-    padding: 10px;
-    border-bottom: 1px dotted black;
+    background: rgb(229, 224, 224);
+    padding: 10px ;
+    /* border-bottom: 1px dotted black; */
+    margin-top: 10px;
 }
 .container{
     font-size: 20px;
@@ -47,9 +51,19 @@ export default {
     justify-content: space-between;
    
 }
+.todoTitle{
+    /* border: 1px solid green; */
+    margin: 0px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 15px;
+
+}
 input[type='checkbox']{
     width: 20px;
     height: 20px;
+    margin: auto;
+    margin-right: 10px;
 }
 .Todo button{
     width: 35px;
@@ -66,11 +80,16 @@ input[type='checkbox']{
     cursor: pointer;
     
 }
+
 .size{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;  */
     gap: 10px;
+    align-items: center;
+    /* border: 1px solid purple; */
+    width: 80%;
+    margin-right: 10px;
+
 }
 @media screen and (max-width: 600px) {
     .container{

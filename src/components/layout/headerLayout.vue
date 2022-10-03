@@ -17,10 +17,11 @@ export default {
 
 <style scoped>
 .header{
-    background: rgb(78, 57, 57);
+    background: black;
     color: white;
     width: 100%;
     text-align: center;
+    padding: 10px 0px;
 
   
 }
@@ -32,5 +33,8 @@ export default {
     padding: 10px;
     margin-top: 20px;
     text-decoration: none;
+}
+#nav{
+    margin-top: 10px ;
 }
 </style>

@@ -47,12 +47,20 @@
    
    },
   methods:{
-   delTodo(id){
+   async delTodo(id){
      console.log('i am working')
-     this.todos = this.todos.filter(todo => todo.id !== id)
+     
     //  axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
     //  .then(res => this.todos = this.todos.filter(todo => todo.id !== id))
     //  .catch(err => console.log(err))
+   if(confirm('Are you sure?')){
+    const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`,{
+      method:'DELETE'
+    })
+
+    res.status === 200 ? (
+    this.todos = this.todos.filter((todo) => todo.id !== id)) : alert('Error in deleting todo.')
+   }
    },
    addTodo(newTodo){
      const { title, completed } = newTodo;
@@ -68,7 +76,7 @@
  
   },
   created(){
-   axios.get('https://jsonplaceholder.typicode.com/todos?_limit=4')
+   axios.get('https://jsonplaceholder.typicode.com/todos?_limit=7')
    .then(res => this.todos = res.data )
    .catch(err => console.log(err))
   }
